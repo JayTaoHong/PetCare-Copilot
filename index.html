@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>宠安 Copilot - MVP 原型</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar" aria-label="产品信息">
+        <div class="brand">
+          <div class="brand-mark">安</div>
+          <div>
+            <h1>宠安 Copilot</h1>
+            <p>宠物异常初筛与就医准备 AI 小程序</p>
+          </div>
+        </div>
+
+        <section class="panel">
+          <h2>核心判断</h2>
+          <p>不替代兽医诊断，只帮宠主完成第一步：判断风险、整理信息、决定下一步动作。</p>
+          <div class="evidence-grid">
+            <div><strong>52%</strong><span>宠主放弃过兽医护理</span></div>
+            <div><strong>67%</strong><span>遇到过高额意外账单</span></div>
+            <div><strong>71%</strong><span>中国兽医受访者已使用 AI</span></div>
+          </div>
+        </section>
+
+        <section class="panel quiet">
+          <h2>适合试点场景</h2>
+          <ul>
+            <li>猫狗呕吐、腹泻、精神下降</li>
+            <li>眼部/皮肤异常拍照咨询</li>
+            <li>误食、跛行、尿闭等红旗预警</li>
+            <li>到宠物医院前自动生成病情摘要</li>
+          </ul>
+        </section>
+      </aside>
+
+      <section class="phone-stage" aria-label="小程序原型">
+        <div class="phone">
+          <header class="phone-header">
+            <span>宠安 Copilot</span>
+            <button class="icon-button" aria-label="更多">•••</button>
+          </header>
+
+          <nav class="tabs" aria-label="原型步骤">
+            <button class="tab active" data-step="input">症状输入</button>
+            <button class="tab" data-step="risk">AI 初筛</button>
+            <button class="tab" data-step="summary">就医摘要</button>
+          </nav>
+
+          <section class="screen active" id="input">
+            <div class="pet-card">
+              <div class="pet-photo" aria-hidden="true"></div>
+              <div>
+                <strong>糯米 · 英短</strong>
+                <span>2 岁 / 4.3kg / 已绝育</span>
+              </div>
+            </div>
+
+            <label class="field">
+              <span>今天发生了什么？</span>
+              <textarea>连续呕吐 3 次，精神比平时差，早饭吃得很少。</textarea>
+            </label>
+
+            <div class="upload-grid">
+              <button class="upload-tile">+ 呕吐物照片</button>
+              <button class="upload-tile">+ 10 秒步态视频</button>
+            </div>
+
+            <div class="question-card">
+              <h3>AI 结构化追问</h3>
+              <label><input type="checkbox" checked /> 是否持续呕吐或腹泻？</label>
+              <label><input type="checkbox" checked /> 是否精神明显下降？</label>
+              <label><input type="checkbox" /> 是否呼吸困难、抽搐或疑似误食？</label>
+            </div>
+
+            <button class="primary action-next" data-step="risk">生成风险判断</button>
+          </section>
+
+          <section class="screen" id="risk">
+            <div class="risk-banner red">
+              <span>红色风险</span>
+              <strong>建议立即联系附近宠物医院</strong>
+            </div>
+
+            <div class="result-list">
+              <article>
+                <h3>为什么是红色？</h3>
+                <p>连续呕吐 + 精神下降属于需要尽快排查的组合，可能涉及急性胃肠问题、误食异物或中毒风险。</p>
+              </article>
+              <article>
+                <h3>现在不要做</h3>
+                <p>不要喂人用止吐药，不要强行进食；保留呕吐物照片和最后进食时间。</p>
+              </article>
+              <article>
+                <h3>到院前准备</h3>
+                <p>带疫苗本、既往病历、最近 24 小时饮食记录，并记录呕吐次数与精神状态变化。</p>
+              </article>
+            </div>
+
+            <button class="primary action-next" data-step="summary">生成给兽医看的摘要</button>
+          </section>
+
+          <section class="screen" id="summary">
+            <div class="summary-card">
+              <h3>兽医预问诊摘要</h3>
+              <p>宠物：猫，2 岁，4.3kg，已绝育。今日连续呕吐 3 次，精神下降，早饭少量进食。暂未观察到抽搐或呼吸困难。建议重点排查急性胃肠问题、误食异物/中毒风险。已上传呕吐物照片，主人可补充最后饮水、排便、是否接触异物。</p>
+            </div>
+
+            <div class="cta-row">
+              <button class="secondary">复制摘要</button>
+              <button class="primary">预约附近医院</button>
+            </div>
+
+            <div class="pricing-card">
+              <strong>商业化验证</strong>
+              <span>本次深度初筛 9.9 元；会员 19.9 元/月含无限记录、提醒和档案导出。</span>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

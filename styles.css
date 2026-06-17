@@ -1,0 +1,388 @@
+:root {
+  color-scheme: light;
+  --ink: #172033;
+  --muted: #5d6675;
+  --line: #d9e0ea;
+  --soft: #f5f7fb;
+  --teal: #176a63;
+  --teal-dark: #0e514b;
+  --red: #b42318;
+  --red-soft: #fdebea;
+  --green-soft: #e8f5ee;
+  --amber-soft: #fff3cf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #eef2f7;
+  color: var(--ink);
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(320px, 430px) 1fr;
+}
+
+.sidebar {
+  padding: 34px 34px 28px;
+  background: #ffffff;
+  border-right: 1px solid var(--line);
+}
+
+.brand {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 800;
+  font-size: 22px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 1.15;
+}
+
+.brand p,
+.panel p,
+.panel li,
+.pet-card span,
+.pricing-card span {
+  color: var(--muted);
+}
+
+.brand p {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.panel {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  background: #fff;
+}
+
+.panel.quiet {
+  background: var(--soft);
+}
+
+.panel h2 {
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: var(--teal-dark);
+}
+
+.panel p,
+.panel li {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.panel ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.evidence-grid div {
+  min-height: 74px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 8px;
+  background: var(--soft);
+}
+
+.evidence-grid strong {
+  display: block;
+  font-size: 23px;
+  margin-bottom: 5px;
+}
+
+.evidence-grid span {
+  display: block;
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.phone-stage {
+  display: grid;
+  place-items: center;
+  padding: 32px;
+}
+
+.phone {
+  width: min(390px, 100%);
+  min-height: 780px;
+  background: #fff;
+  border: 1px solid #c7d0dd;
+  border-radius: 34px;
+  box-shadow: 0 24px 70px rgba(23, 32, 51, 0.18);
+  overflow: hidden;
+}
+
+.phone-header {
+  height: 62px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  font-weight: 700;
+}
+
+.icon-button {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--muted);
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+  gap: 8px;
+  background: var(--soft);
+}
+
+.tab {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  border-radius: 8px;
+  padding: 9px 4px;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #fff;
+  color: var(--teal-dark);
+  border-color: var(--line);
+  font-weight: 700;
+}
+
+.screen {
+  display: none;
+  padding: 18px;
+}
+
+.screen.active {
+  display: block;
+}
+
+.pet-card {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--soft);
+  margin-bottom: 14px;
+}
+
+.pet-photo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 42% 42%, #fff 0 10px, transparent 11px),
+    radial-gradient(circle at 62% 40%, #172033 0 4px, transparent 5px),
+    radial-gradient(circle at 40% 40%, #172033 0 4px, transparent 5px),
+    linear-gradient(135deg, #b8c2d2, #eef2f7);
+}
+
+.pet-card strong,
+.pet-card span {
+  display: block;
+}
+
+.field {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.field span {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 96px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.upload-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.upload-tile {
+  min-height: 86px;
+  border: 1px dashed #9aa6b8;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--teal-dark);
+  font-weight: 700;
+}
+
+.question-card,
+.result-list article,
+.summary-card,
+.pricing-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 14px;
+  background: #fff;
+}
+
+.question-card h3,
+.result-list h3,
+.summary-card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.question-card label {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.primary,
+.secondary {
+  min-height: 46px;
+  border-radius: 8px;
+  border: 0;
+  padding: 0 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.primary {
+  width: 100%;
+  background: var(--teal);
+  color: #fff;
+}
+
+.secondary {
+  background: var(--soft);
+  color: var(--teal-dark);
+  border: 1px solid var(--line);
+}
+
+.risk-banner {
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+
+.risk-banner span {
+  display: inline-block;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.risk-banner strong {
+  display: block;
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.risk-banner.red {
+  background: var(--red-soft);
+  color: var(--red);
+  border: 1px solid #f4b4ae;
+}
+
+.result-list p,
+.summary-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.cta-row {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.pricing-card {
+  background: var(--green-soft);
+}
+
+.pricing-card strong,
+.pricing-card span {
+  display: block;
+}
+
+.pricing-card strong {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 840px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .phone-stage {
+    padding: 22px 14px;
+  }
+}
